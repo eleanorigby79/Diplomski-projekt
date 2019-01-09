@@ -45,7 +45,6 @@ int main(void)
   STM_EVAL_LEDInit(LED5);
   STM_EVAL_LEDInit(LED6);
 	
- 
 	USART1_Init();
 	timer2_init();
 	
@@ -61,20 +60,6 @@ int main(void)
 	
 	/*Pozivamo prvu funkciju u kojoj inicijaliziramo mikrofon */
   WavePlayBack(I2S_AudioFreq_16k); 
-	char c[NUMEL];
-	int i = 0;
-	int32_t coeff;
-  while (1) {
-//		if(uartGetc(USART1) == 'r') {
-//	
-//			STM_EVAL_LEDOn(LED6);
-//			while(i<NUMEL) {
-//				c[i] = uartGetc(USART1);
-//				i++;
-//				printf("%c",USART1->DR);
-//				}
-//			coeff = atoi(c);
-//				
-//		}
-	}
+
+  while (1);
 }

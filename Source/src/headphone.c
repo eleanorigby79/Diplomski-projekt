@@ -11,7 +11,7 @@ extern volatile int user_mode;
 
 
 int ci = 0, cd = 0;
-int del = 16000;
+int del = 0.175*16000;
 int16_t out[32000];
 /*
  * We have three buffers: two output buffers used in a ping-pong arrangement, and an input

@@ -42,7 +42,7 @@ bool firstStart = false;
 																				 
 
 // DSP funkcija
-void filter(int16_t* buffer, int length)
+void filt(int16_t* buffer, int length)
 {
 
 	// ispitujemo da li je tipka bila stisnuta

@@ -35,3 +35,14 @@
 .\audio-dsp\usart.o: ..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_usart.h
 .\audio-dsp\usart.o: ..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_wwdg.h
 .\audio-dsp\usart.o: ..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\misc.h
+.\audio-dsp\usart.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\audio-dsp\usart.o: ..\inc\main.h
+.\audio-dsp\usart.o: ..\..\Utilities\STM32F4-Discovery\stm32f4_discovery.h
+.\audio-dsp\usart.o: ..\..\Utilities\STM32F4-Discovery\stm32f4_discovery_audio_codec.h
+.\audio-dsp\usart.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\audio-dsp\usart.o: ..\inc\stm32f4xx_it.h
+.\audio-dsp\usart.o: ..\inc\headphone.h
+.\audio-dsp\usart.o: ..\inc\main.h
+.\audio-dsp\usart.o: ..\inc\microphone.h
+.\audio-dsp\usart.o: ..\..\Utilities\STM32F4-Discovery\pdm_filter.h
+.\audio-dsp\usart.o: ..\inc\timer.h

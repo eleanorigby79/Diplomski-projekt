@@ -13,6 +13,11 @@ void uartClose(USART_TypeDef* USARTx);
 void uartPutString(volatile char *c, USART_TypeDef* USARTx);
 int uartGetc(USART_TypeDef* USARTx);
 void uartSendInt(uint8_t *c, USART_TypeDef* USARTx);
-int USART1_IRQHandler(void);
+void USART1_IRQHandler(void);
+
+extern int16_t filter[56];
+extern int8_t pt;
+extern int8_t ctrl;
+extern char type;
 
 #endif

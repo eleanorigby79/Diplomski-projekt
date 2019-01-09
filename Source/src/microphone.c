@@ -57,7 +57,7 @@ uint32_t WaveRecorderInit(uint32_t AudioFreq, uint32_t BitRes, uint32_t ChnlNbr)
     
     /* Filter LP & HP Init */
     Filter.LP_HZ = 8000;
-    Filter.HP_HZ = 0;
+    Filter.HP_HZ = 60;
     Filter.Fs = 16000;
     Filter.Out_MicChannels = 1;
     Filter.In_MicChannels = 1;
@@ -190,8 +190,8 @@ static void WaveRecorder_NVIC_Init(void)
   NVIC_PriorityGroupConfig(NVIC_PriorityGroup_3); 
   /* Configure the SPI interrupt priority */
   NVIC_InitStructure.NVIC_IRQChannel = SPI2_IRQn;
-  NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 1;
-  NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;
+  NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 2;
+  NVIC_InitStructure.NVIC_IRQChannelSubPriority = 1;
   NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
   NVIC_Init(&NVIC_InitStructure);
 }

@@ -4,7 +4,9 @@
 
 #include <stdint.h>
 #include "timer.h"
-void filter(int16_t* buffer, int length);
+#include "usart.h"
+
+void filt(int16_t* buffer, int length);
 void delay(int16_t* buffer,int16_t* out, int Ns);
 void initFilter(void);
 

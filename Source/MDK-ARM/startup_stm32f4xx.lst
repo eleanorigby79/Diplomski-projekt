@@ -842,19 +842,20 @@ ARM Macro Assembler    Page 13
               00000000 
               00000000 
 Command Line: --xref --diag_suppress=9931 --cpu=Cortex-M4.fp --apcs=interwork -
--depend=.\audio-dsp\startup_stm32f4xx.d -o.\audio-dsp\startup_stm32f4xx.o -ID:\
+-depend=.\audio-dsp\startup_stm32f4xx.d -o.\audio-dsp\startup_stm32f4xx.o -IC:\
 
 
 
 ARM Macro Assembler    Page 14 
 
 
-STM\audio\Audio_acquisition\Source\MDK-ARM\RTE -IC:\Keil_v5\ARM\PACK\Keil\STM32
-F4xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include -IC:\Keil_v5\ARM\CMSI
-S\Include -IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.11.0 --predefine="__EVAL S
-ETA 1" --predefine="__MICROLIB SETA 1" --predefine="__UVISION_VERSION SETA 521"
- --predefine="STM32F407xx SETA 1" --list=.\startup_stm32f4xx.lst ..\..\Librarie
-s\CMSIS\ST\STM32F4xx\Source\Templates\arm\startup_stm32f4xx.s
+Users\Paula\Documents\GitHub\Diplomski-projekt\Source\MDK-ARM\RTE -IC:\Keil_v5\
+ARM\PACK\Keil\STM32F4xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include -I
+C:\Keil_v5\ARM\CMSIS\Include -IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.11.0 --
+predefine="__EVAL SETA 1" --predefine="__MICROLIB SETA 1" --predefine="__UVISIO
+N_VERSION SETA 521" --predefine="STM32F407xx SETA 1" --list=.\startup_stm32f4xx
+.lst ..\..\Libraries\CMSIS\ST\STM32F4xx\Source\Templates\arm\startup_stm32f4xx.
+s
 
 
 

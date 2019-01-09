@@ -4,14 +4,18 @@
 #include <stm32f4xx_gpio.h> // gpio control
 #include <stm32f4xx_rcc.h> // reset anc clocking
 #include <usart.h>
+#include <string.h>
+#include "main.h"
 
 // RX FIFO buffer
 uint8_t RX_BUFFER[BUFSIZE];
 int RX_BUFFER_HEAD, RX_BUFFER_TAIL;
 // TX state flag
 uint8_t TxReady;
-
-
+int16_t filter[56];
+int8_t pt = 0;
+int8_t ctrl = 0;
+char type = NULL;
 // init USART1
 void USART1_Init(void)
 {
@@ -59,54 +63,26 @@ void USART1_Init(void)
 	
 	// enables USART1 interrupt generation
 	USART_Cmd(USART1, ENABLE);
+	NVIC_EnableIRQ(USART1_IRQn);
+	
+	memset(filter,0,56*sizeof(int16_t));
 }
 
 
-void uartClose(USART_TypeDef* USARTx) {
-		
-	USART_Cmd(USARTx, DISABLE);
-	
-	}
-
-
-void uartPutString(volatile char *c, USART_TypeDef* USARTx) {
-	
-		while(*c) {
-			while(USART_GetFlagStatus(USARTx, USART_FLAG_TXE) == RESET);
-			
-			USART_SendData(USARTx, *c);
-			
-			*c++;
-			}
-	}
-	
-	
-int uartGetc(USART_TypeDef* USARTx) {
-	
-	while(USART_GetFlagStatus(USARTx, USART_FLAG_RXNE) == RESET);
-	
-	return USART_ReceiveData(USARTx);
-	
-	}
-
-void uartSendInt(uint8_t *c, USART_TypeDef* USARTx) {
-	
-	while(USART_GetFlagStatus(USARTx, USART_FLAG_TXE) == RESET);
-	USART_SendData(USARTx, *c);
-	
-	}
-
-int USART1_IRQHandler(void) {	
-		
+void USART1_IRQHandler(void) {	
 		if(USART_GetITStatus(USART1, USART_IT_RXNE)) {
+				filter[pt] = USART_ReceiveData(USART1);
 			
-			char t = USART_ReceiveData(USART1);
-			uartPutString(&t, USART1);
-			
+			ctrl = 1; //transmitting
+				pt++;
+				STM_EVAL_LEDOn(LED6);
+				if(pt == 56) {
+					pt = 0;
+					ctrl = 0; //finished transmitting
+					STM_EVAL_LEDOff(LED6);
+				}
+
 			USART_ClearITPendingBit(USART1, USART_IT_RXNE);
-			return 1;
 		}
 		
-		else
-			return -1;
 	}		

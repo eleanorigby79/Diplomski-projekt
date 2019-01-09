@@ -36,6 +36,7 @@
 .\audio-dsp\dsp.o: ..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_usart.h
 .\audio-dsp\dsp.o: ..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_wwdg.h
 .\audio-dsp\dsp.o: ..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc\misc.h
+.\audio-dsp\dsp.o: ..\inc\usart.h
 .\audio-dsp\dsp.o: ..\..\Libraries\CMSIS\Include\arm_math.h
 .\audio-dsp\dsp.o: ..\..\Libraries\CMSIS\Include\core_cm4.h
 .\audio-dsp\dsp.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
